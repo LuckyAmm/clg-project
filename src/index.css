@@ -19,6 +19,9 @@ body{
     .dividerStyle{
         @apply  relative max-w-[500px] mx-auto text-center text-black font-bold  before:h-[2px] before:w-[130px] before:bg-red-600 before:block before:absolute before:top-[50%] before:left-0 after:h-[2px] after:w-[130px] after:bg-red-600 after:block after:absolute after:top-[50%] after:right-0 text-sm lg:text-3xl;
     }
+    .tabDesign{
+        @apply w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700 ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2
+    }
 }
 
 @keyframes zoominoutsinglefeatured {
@@ -35,8 +38,8 @@ body{
 
 
 .loginBg{
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.582), rgba(0, 0, 0, 0.593)),url('./images/logo.png');
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.838), rgba(0, 0, 0, 0.689)),url('./images/pencil.jpg');
   background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
 }

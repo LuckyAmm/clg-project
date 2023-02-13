@@ -18,7 +18,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 left-0 select-none z-10 h-0 ">
+    <div className="sticky top-0 left-0 select-none z-10 h-0">
       <nav
         className="flex items-center justify-between shadow-xl w-full px-8 py-3 bg-white bg-opacity-60 text-white"
         aria-label="Global"
