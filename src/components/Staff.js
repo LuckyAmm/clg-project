@@ -5,6 +5,8 @@ import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { Tab } from "@headlessui/react";
 import principal from "../images/principal.jpeg";
 import branchPic from '../images/cme.png'
+import { useEffect } from "react";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -12,18 +14,28 @@ function classNames(...classes) {
 const branches = [{ name: "ECE" }, { name: "MEC" }, { name: "CME" }];
 export default function Staff() {
   const [selected, setSelected] = useState(branches[0]);
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="w-full h-screen pt-20 px-4 md:px-16">
+      <h2 className="text-center text-2xl font-bold mb-4">
+        <span className="text-red-600 border-b-4 border-gray-900 mr-3">
+          DEPARTMENT
+        </span>
+        <span className="text-gray-900 border-b-4 border-red-600">
+          DETAILS
+        </span>
+      </h2>
       <div className="wraper flex flex-col items-center justify-center w-full gap-2">
         <div className="  flex items-center mb-2 gap-1 md:gap-3">
-          <label htmlFor="branch" className="cursor-pointer">
+          <label htmlFor="branch" className="cursor-pointer text-xs md:text-base">
             Select Branch :
           </label>
           <Listbox
             value={selected}
             onChange={setSelected}
-            className="w-60 md:w-72"
+            className="w-52 md:w-72"
           >
             <div className="relative mt-1">
               <Listbox.Button
@@ -157,126 +169,126 @@ export default function Staff() {
               </Tab.Panel>
               <Tab.Panel className="w-full bg-white  min-h-fit p-2 md:p-6">
                 <div className="flex flex-wrap gap-x-2 gap-y-6 justify-evenly">
-                  <div class="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
+                  <div className="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
                     <img
-                      class="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
+                      className="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
                       src={principal}
                       alt="Sunset in the mountains"
                       draggable={false}
                     />
-                    <div class="px-6 py-4">
-                      <div class="font-semibold text-xl mb-2 text-black">
+                    <div className="px-6 py-4">
+                      <div className="font-semibold text-xl mb-2 text-black">
                         Saida Nayaksfsdfsdfs
                       </div>
-                      <p class="text-gray-700 text-base flex flex-col text-start">
+                      <p className="text-gray-700 text-base flex flex-col text-start">
                         <span> Digital Electrnics Expert</span>
                         <span>Phd Frcs Mbbs Medical</span>
                         <span>4 Years Experience</span>
                       </p>
                     </div>
                   </div>
-                  <div class="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
+                  <div className="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
                     <img
-                      class="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
+                      className="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
                       src={principal}
                       alt="Sunset in the mountains"
                       draggable={false}
                     />
-                    <div class="px-6 py-4">
-                      <div class="font-semibold text-xl mb-2 text-black">
+                    <div className="px-6 py-4">
+                      <div className="font-semibold text-xl mb-2 text-black">
                         Saida Nayaksfsdfsdfs
                       </div>
-                      <p class="text-gray-700 text-base flex flex-col text-start">
+                      <p className="text-gray-700 text-base flex flex-col text-start">
                         <span> Digital Electrnics Expert</span>
                         <span>Phd Frcs Mbbs Medical</span>
                         <span>4 Years Experience</span>
                       </p>
                     </div>
                   </div>
-                  <div class="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
+                  <div className="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
                     <img
-                      class="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
+                      className="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
                       src={principal}
                       alt="Sunset in the mountains"
                       draggable={false}
                     />
-                    <div class="px-6 py-4">
-                      <div class="font-semibold text-xl mb-2 text-black">
+                    <div className="px-6 py-4">
+                      <div className="font-semibold text-xl mb-2 text-black">
                         Saida Nayaksfsdfsdfs
                       </div>
-                      <p class="text-gray-700 text-base flex flex-col text-start">
+                      <p className="text-gray-700 text-base flex flex-col text-start">
                         <span> Digital Electrnics Expert</span>
                         <span>Phd Frcs Mbbs Medical</span>
                         <span>4 Years Experience</span>
                       </p>
                     </div>
                   </div>
-                  <div class="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
+                  <div className="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
                     <img
-                      class="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
+                      className="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
                       src={principal}
                       alt="Sunset in the mountains"
                       draggable={false}
                     />
-                    <div class="px-6 py-4">
-                      <div class="font-semibold text-xl mb-2 text-black">
+                    <div className="px-6 py-4">
+                      <div className="font-semibold text-xl mb-2 text-black">
                         Saida Nayaksfsdfsdfs
                       </div>
-                      <p class="text-gray-700 text-base flex flex-col text-start">
+                      <p className="text-gray-700 text-base flex flex-col text-start">
                         <span> Digital Electrnics Expert</span>
                         <span>Phd Frcs Mbbs Medical</span>
                         <span>4 Years Experience</span>
                       </p>
                     </div>
                   </div>
-                  <div class="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
+                  <div className="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
                     <img
-                      class="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
+                      className="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
                       src={principal}
                       alt="Sunset in the mountains"
                       draggable={false}
                     />
-                    <div class="px-6 py-4">
-                      <div class="font-semibold text-xl mb-2 text-black">
+                    <div className="px-6 py-4">
+                      <div className="font-semibold text-xl mb-2 text-black">
                         Saida Nayaksfsdfsdfs
                       </div>
-                      <p class="text-gray-700 text-base flex flex-col text-start">
+                      <p className="text-gray-700 text-base flex flex-col text-start">
                         <span> Digital Electrnics Expert</span>
                         <span>Phd Frcs Mbbs Medical</span>
                         <span>4 Years Experience</span>
                       </p>
                     </div>
                   </div>
-                  <div class="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
+                  <div className="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
                     <img
-                      class="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
+                      className="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
                       src={principal}
                       alt="Sunset in the mountains"
                       draggable={false}
                     />
-                    <div class="px-6 py-4">
-                      <div class="font-semibold text-xl mb-2 text-black">
+                    <div className="px-6 py-4">
+                      <div className="font-semibold text-xl mb-2 text-black">
                         Saida Nayaksfsdfsdfs
                       </div>
-                      <p class="text-gray-700 text-base flex flex-col text-start">
+                      <p className="text-gray-700 text-base flex flex-col text-start">
                         <span> Digital Electrnics Expert</span>
                         <span>Phd Frcs Mbbs Medical</span>
                         <span>4 Years Experience</span>
                       </p>
                     </div>
                   </div>
-                  <div class="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
+                  <div className="w-full md:max-w-[18rem] rounded-xl overflow-hidden shadow-lg border-2 flex flex-col justify-between py-3">
                     <img
-                      class="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
+                      className="w-32 object-cover rounded-full border-2 object-center h-32 select-none mx-auto"
                       src={principal}
                       alt="Sunset in the mountains"
                       draggable={false}
                     />
-                    <div class="px-6 py-4">
-                      <div class="font-semibold text-xl mb-2 text-black">
+                    <div className="px-6 py-4">
+                      <div className="font-semibold text-xl mb-2 text-black">
                         Saida Nayaksfsdfsdfs
                       </div>
-                      <p class="text-gray-700 text-base flex flex-col text-start">
+                      <p className="text-gray-700 text-base flex flex-col text-start">
                         <span> Digital Electrnics Expert</span>
                         <span>Phd Frcs Mbbs Medical</span>
                         <span>4 Years Experience</span>

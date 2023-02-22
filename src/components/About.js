@@ -5,7 +5,7 @@ import principal from "../images/principal.jpeg";
 export default function About() {
   return (
     <div className="pt-20 ">
-      <h2 className="text-center text-3xl font-bold">
+      <h2 className="text-center text-2xl font-bold">
         <span className="text-red-600 border-b-4 border-gray-900 mr-3">
           ABOUT
         </span>
@@ -13,7 +13,7 @@ export default function About() {
           COLLLEGE
         </span>
       </h2>
-      <div className="mx-4 my-6 bg-white h-[75vh] max-h-fit">
+      <div className="mx-4 my-6 bg-white min-h-fit">
         <div className=" bg-white w-full p-4">
           <h2 className="text-center md:text-xl underline font-semibold">
             Dr. B.R.Ambedkar Government Model Residential Polytechnic, Bommuru{" "}

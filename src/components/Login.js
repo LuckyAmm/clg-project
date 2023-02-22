@@ -6,7 +6,7 @@ export default function Login() {
   const [captcha, setCaptcha] = useState();
 
   return (
-    <div className=" h-screen w-screen flex items-center justify-center">
+    <div className=" h-screen w-screen flex items-center justify-center mt-4">
       <div className="box w-[80%] h-[80%] flex shadow-xl shadow-black bg-[#00000089] rounded-xl md:rounded-none">
         <div className="w-1/2 h-full flex-col gap-6 items-center py-6 px-3 loginBg hidden md:flex">
           {/* <img src={Pencil} alt="" className="h-full w-full object-cover object-center" /> */}
@@ -80,7 +80,7 @@ export default function Login() {
             </label>
           </div>
           <div className="w-full text-center font-extrabold bg-gray-300 font-serif select-none rounded py-2">
-            4578
+            5789
           </div>
           <div className="relative w-full">
             <input

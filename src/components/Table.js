@@ -63,78 +63,78 @@ export default function Table() {
           </div>
         </div>
         <h2 className="dividerStyle mt-16 mb-3">Seat Details</h2>
-        <div class="overflow-x-auto  mb-16 container mx-auto">
-          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-            <div class="overflow-hidden">
-              <table class="min-w-full border text-center">
-                <thead class="border-b bg-gray-300 text-white">
+        <div className="overflow-x-auto  mb-16 container mx-auto">
+          <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div className="overflow-hidden">
+              <table className="min-w-full border text-center">
+                <thead className="border-b bg-gray-300 text-white">
                   <tr>
                     <th
                       scope="col"
-                      class="text-sm font-medium text-gray-900 px-6 py-4 border-r"
+                      className="text-sm font-medium text-gray-900 px-6 py-4 border-r"
                     >
                       Branch
                     </th>
                     <th
                       scope="col"
-                      class="text-sm font-medium text-gray-900 px-6 py-4 border-r"
+                      className="text-sm font-medium text-gray-900 px-6 py-4 border-r"
                     >
                       Total Seats
                     </th>
                     <th
                       scope="col"
-                      class="text-sm font-medium text-gray-900 px-6 py-4 border-r"
+                      className="text-sm font-medium text-gray-900 px-6 py-4 border-r"
                     >
                       Occupied Seats
                     </th>
                     <th
                       scope="col"
-                      class="text-sm font-medium text-gray-900 px-6 py-4"
+                      className="text-sm font-medium text-gray-900 px-6 py-4"
                     >
                       Available Seats
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">
+                  <tr className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">
                       CME
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
                       27
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
                       10
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                       17
                     </td>
                   </tr>
-                  <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">
+                  <tr className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">
                       ECE
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
                       55
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
                       22
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                       33
                     </td>
                   </tr>
-                  <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">
+                  <tr className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">
                       MEC
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center border-r">
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center border-r">
                       34
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                       10
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                       24
                     </td>
                   </tr>
