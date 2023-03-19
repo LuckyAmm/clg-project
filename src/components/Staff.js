@@ -134,6 +134,18 @@ export default function Staff() {
               >
                 Labs
               </Tab>
+              <Tab
+                className={({ selected }) =>
+                  classNames(
+                    "tabDesign",
+                    selected
+                      ? "bg-white shadow"
+                      : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+                  )
+                }
+              >
+                Time Tables
+              </Tab>
             </Tab.List>
             <Tab.Panels className="h-[70vh] bg-white">
               <Tab.Panel className="w-full bg-white  min-h-fit p-8 flex items-center flex-col">
@@ -299,6 +311,9 @@ export default function Staff() {
               </Tab.Panel>
               <Tab.Panel className="w-full bg-white  min-h-fit">
                 lab tab
+              </Tab.Panel>
+              <Tab.Panel className="w-full bg-white  min-h-fit">
+                time table tab
               </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>

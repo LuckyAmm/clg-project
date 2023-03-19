@@ -1,9 +1,26 @@
 import React, { useState } from "react";
 import Logo from "../images/logo.png";
-export default function Login() {
+export default function Login(props) {
   const [userName, setUserName] = useState();
   const [password, setPassword] = useState();
   const [captcha, setCaptcha] = useState();
+  const correctUserName = "admin";
+  const correctPassword = "admin@1234";
+  const validate = () => {
+    // if (userName === correctUserName) {
+    //   if (password === correctPassword) {
+    //     if (captcha === '5789') {
+          props.changetoAdmin()
+    //     } else {
+    //       alert("captcha missmatch")
+    //     }
+    //   } else {
+    //     alert("password missmatch")
+    //   }
+    // } else {
+    //   alert("username missmatch")
+    // }
+  }
 
   return (
     <div className=" h-screen w-screen flex items-center justify-center mt-4">
@@ -104,7 +121,7 @@ export default function Login() {
               Enter Captcha
             </label>
           </div>
-          <button className="bg-indigo-600 px-6 py-1 w-full text-white rounded hover:bg-indigo-700 hover:scale-105 transition-all mt-2">
+          <button onClick={validate} className="bg-indigo-600 px-6 py-1 w-full text-white rounded hover:bg-indigo-700 hover:scale-105 transition-all mt-2">
             LOGIN
           </button>
         </div>

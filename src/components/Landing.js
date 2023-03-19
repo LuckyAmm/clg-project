@@ -3,8 +3,9 @@ import Logo from '../images/logo.png'
 import { ArrowDownIcon } from '@heroicons/react/24/outline'
 
 export default function Landing() {
-  
-  return (<>
+    
+  return (
+    <>
   
       <div className=" min-h-screen  overflow-hidden  absolute top-0 left-0 -z-20"><div className=" clgPic h-screen w-screen"></div></div>
     <main className=' h-screen flex items-center justify-center lg:justify-start select-none'>

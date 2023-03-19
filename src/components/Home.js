@@ -9,9 +9,13 @@ import { useEffect } from 'react'
 
 export default function Home() {
 
+
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+  
+  
   return (
     <div className="w-screen">
       {/* <marquee behavior="scroll" direction="left" className='absolute bg-[#ffffffb3] text-gray-900 top-12 lg:top-[60px] w-screen py-[6px] '><span className='bg-black text-white animate-pulse p-1 rounded'>NEW</span></marquee> */}
