@@ -1,11 +1,12 @@
-import { Dialog } from "@headlessui/react";
+import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   XMarkIcon,
   AcademicCapIcon,
+  ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 import { LockClosedIcon } from "@heroicons/react/20/solid";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const navigation = [
@@ -42,11 +43,10 @@ export default function Header() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
   
   
   const changeBackground = () => {
-    if (window.scrollY >= 180) {
+    if (window.scrollY >= 90) {
       setNavbar(true)
     } else {
       setNavbar(false)
@@ -59,21 +59,21 @@ export default function Header() {
       <nav
         className={
           navbar
-            ? `flex items-center justify-between shadow-xl w-full px-8 py-2 bg-white text-white`
-            : `flex items-center justify-between  w-full px-8 py-2 bg-white bg-opacity-40 text-white`
+            ? `flex items-center justify-between shadow-xl w-full px-8 py-2 bg-indigo-900 text-white`
+            : `flex items-center justify-between  w-full px-8 py-2 bg-gray-200/50 text-gray-900`
         }
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <span className="-m-1.5 p-1.5">
             <span className="sr-only">Government College Website</span>
-            <AcademicCapIcon className="h-6 w-6 text-black" />
+            <AcademicCapIcon className="h-6 w-6 " />
           </span>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 "
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -86,33 +86,53 @@ export default function Header() {
               {!item.subMenu && (
                 <NavLink
                   to={item.href}
-                  key={item.name}
-                  className="transition-all text-sm font-semibold  text-gray-900 hover:bg-indigo-500 hover:text-white px-2 py-1 rounded peer"
+                  className="transition-all duration-500 text-sm font-semibold  hover:bg-indigo-500 hover:text-white px-2 py-1 rounded"
                 >
                   {item.name}
                 </NavLink>
               )}
               {item.subMenu && (
-                <div
-                  to={item.href}
-                  key={item.name}
-                  className="cursor-pointer transition-all text-sm font-semibold  text-gray-900 hover:bg-indigo-500 hover:text-white px-2 py-1 rounded peer"
+                <Menu
+                  as="div"
+                  className="relative text-left min-w-full"
+                  key={i}
                 >
-                  {item.name}
-                </div>
-              )}
-              {item.subMenu && (
-                <div className=" flex-col hidden peer-hover:flex absolute top-10 bg-indigo-500/90 hover:flex rounded peer-active:flex ">
-                  {item.subMenu.map((subitem) => (
-                    <Link
-                      to={subitem.href}
-                      key={subitem.name}
-                      className="hover:bg-indigo-700/70 p-4 rounded"
-                    >
-                      {subitem.name}
-                    </Link>
-                  ))}
-                </div>
+                  <Menu.Button className=" text-sm font-semibold  hover:bg-indigo-500 hover:text-white px-2 py-1 rounded ">
+                    <div className="flex items-center gap-3">
+                      <h2 className="whitespace-pre duration-500 lg:opacity-100 translate-x-0 ">
+                        {item.name}
+                      </h2>
+                      <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                  </Menu.Button>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="transform opacity-0 scale-90"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-200"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-90"
+                  >
+                    <Menu.Items>
+                      <div className=" flex flex-col absolute shadow-xl w-44">
+                        {item.subMenu.map((subItem, i) => {
+                          return (
+                            <Menu.Item key={i} className="">
+                              <NavLink to={subItem.href} className="">
+                                <h2
+                                  className={`text-white group flex w-full bg-indigo-600 p-2 hover:bg-indigo-900 hover:text- transition-all duration-300`}
+                                >
+                                  {subItem.name}
+                                </h2>
+                              </NavLink>
+                            </Menu.Item>
+                          );
+                        })}
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
               )}
             </div>
           ))}
@@ -154,7 +174,7 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+                {navigation.map((item, i) => (
                   <>
                     {!item.subMenu && (
                       <NavLink
@@ -167,31 +187,44 @@ export default function Header() {
                       </NavLink>
                     )}
                     {item.subMenu && (
-                      <div
-                        to={item.href}
-                        key={item.name}
-                        className="cursor-pointer -mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10 text-center "
-                        onClick={() => {
-                          subMenuOpen
-                            ? setSubMenuOpen(false)
-                            : setSubMenuOpen(true);
-                        }}
-                      >
-                        {item.name}
-                      </div>
-                    )}
-                    {item.subMenu && subMenuOpen && (
-                      <div className=" flex-col flex  bg-gray-500/70 hover:flex rounded peer-active:flex z-40 ">
-                        {item.subMenu.map((subitem) => (
-                          <Link
-                            to={subitem.href}
-                            key={subitem.name}
-                            className="hover:bg-gray-700/70 p-4 rounded hover:text-white"
-                          >
-                            {subitem.name}
-                          </Link>
-                        ))}
-                      </div>
+                      <Menu as="div" className="" key={i}>
+                        <Menu.Button className="flex items-center gap-3 justify-center w-full rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10 text-center">
+                            {item.name}
+                            <ChevronDownIcon
+                              className="h-5 w-5"
+                              aria-hidden="true"
+                            />
+                        </Menu.Button>
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-200"
+                          enterFrom="transform opacity-0 scale-90"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-200"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-90"
+                        >
+                          <Menu.Items>
+                            <div className=" flex flex-col shadow-xl w-full bg-indigo-400/70 rounded-xl text-center">
+                              {item.subMenu.map((subItem, i) => {
+                                return (
+                                  <Menu.Item key={i} className="p-2">
+                                    <NavLink
+                                      to={subItem.href}
+                                      className="rounded"
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                      }}
+                                    >
+                                      {subItem.name}
+                                    </NavLink>
+                                  </Menu.Item>
+                                );
+                              })}
+                            </div>
+                          </Menu.Items>
+                        </Transition>
+                      </Menu>
                     )}
                   </>
                 ))}
